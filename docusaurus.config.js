@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  url: 'https://bhavya-tech.github.io/django-deployment/',
+  url: 'https://bhavya-tech.github.io/',
   baseUrl: '/django-deployment/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
