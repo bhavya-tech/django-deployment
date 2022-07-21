@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Django Deployment',
+  tagline: 'A step-by-step guide to deploy Django projects',
   url: 'https://bhavya-tech.github.io/',
   baseUrl: '/django-deployment/',
   onBrokenLinks: 'throw',
@@ -57,7 +57,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Deploy Django',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -67,11 +67,10 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Guide',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/bhavya-tech/django-deployment',
             label: 'GitHub',
             position: 'right',
           },
@@ -83,22 +82,35 @@ const config = {
           {
             title: 'Docs',
             items: [
+              
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'The Django Project',
+                to: '/docs/category/starting-django-project'
+              },
+              {
+                label: 'Server Setup',
+                to: '/docs/category/setting-up-the-server'
+              },
+              {
+                label: 'Deploying',
+                to: '/docs/category/going-live'
+              },
+              {
+                label: 'Frequently Used Commands',
+                to: '/docs/category/frequently-used-commands'
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Find me on',
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/users/16685653/bhavya-peshavaria',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/bhavya-tech',
               },
               {
                 label: 'Twitter',
@@ -115,12 +127,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/bhavya-tech/django-deployment',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: ` Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
