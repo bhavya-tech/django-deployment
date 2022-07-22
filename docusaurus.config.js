@@ -65,7 +65,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: '/category/starting-django-project',
             position: 'left',
             label: 'Guide',
           },

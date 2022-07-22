@@ -43,10 +43,6 @@ function Feature({Svg, title, description}) {
     );
   }, [colorMode]);
 
-  
-  
-  console.log(colorMode);
-
   if(colorMode == undefined){
     return <>Loading...</>;
   }
