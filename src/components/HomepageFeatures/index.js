@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useColorMode } from '@docusaurus/theme-common';
@@ -34,11 +34,27 @@ const FeatureList = [
 ];
 
 function Feature({Svg, title, description}) {
+  var [svgColor, setSvgColor] = useState(0);
   const { colorMode } = useColorMode();
+
+  useEffect(() => {
+    setSvgColor(
+      colorMode === 'dark' ? 'white' : 'black'
+    );
+  }, [colorMode]);
+
+  
+  
+  console.log(colorMode);
+
+  if(colorMode == undefined){
+    return <>Loading...</>;
+  }
+
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center padding-vert--md">
-        <Svg className={styles.featureSvg} role="img" fill={colorMode=='dark'?'white':'black'} />
+        <Svg className={styles.featureSvg} role="img" fill={svgColor} test={svgColor} />
       </div>
       <div className="text--center padding-horiz--md padding-vert--md">
         <h3>{title}</h3>
