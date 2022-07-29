@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -49,6 +50,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleAnalytics: {
+          trackingID: process.env.G_ANALYTICS_ID,
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -56,6 +61,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata:[{name:"keywords", content:"django, deployment, deployment-guide"}],
       navbar: {
         title: 'Deploy Django',
         logo: {
@@ -111,10 +117,6 @@ const config = {
               {
                 label: 'Github',
                 href: 'https://github.com/bhavya-tech',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
