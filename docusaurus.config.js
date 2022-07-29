@@ -54,6 +54,12 @@ const config = {
           trackingID: process.env.G_ANALYTICS_ID,
           anonymizeIP: true,
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
