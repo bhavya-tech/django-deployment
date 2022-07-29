@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: "16.14"
       # Install and build Docusaurus website
+      - name: Create .env file
+        run: echo "G_ANALYTICS_ID='${{ secrets.G_ANALYTICS_ID }}'" > .env
       - name: Build Docusaurus website
         run: |
           npm install 
