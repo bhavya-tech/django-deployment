@@ -35,4 +35,4 @@ jobs:
           build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          G_ANALYTICS_ID: ${{ secrets.G_ANALYTICS_ID }}
+          G_ANALYTICS_ID: '${{ secrets.G_ANALYTICS_ID }}'
