@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Gunicorn
 
-Gunicorn is needed to run the server in deployment mode.
+Gunicorn is a Python Web Server Gateway Interface HTTP server. It is needed to run the server in deployment mode. 
 
 ## Installing Gunicorn
 
@@ -25,11 +25,11 @@ sudo nano /etc/systemd/system/gunicorn.socket
 
 If you have GUI access, run:
 ```bash
-sudo gedit /etc/systemd/system/gunicorn.service
+sudo gedit /etc/systemd/system/gunicorn.socket
 ```
 
 Edit the below code accordingly and paste it:
-```unit title="/etc/systemd/system/gunicorn.service"
+```unit title="/etc/systemd/system/gunicorn.socket"
 [Unit]
 Description=gunicorn socket
 
@@ -40,7 +40,12 @@ ListenStream=0.0.0.0:8080
 WantedBy=sockets.target
 ```
 
-We are running the Gunicorn server on port 8080. If you need to run on other port, make sure to edit it in all the steps.
+This will run the Gunicorn server on port 8080. If you need to run on other port, make sure to edit it in all the steps.
+
+:::info
+
+It is possible to use unix domain socket (IPC socket) to run gunicorn rather than network port. Replace `0.0.0.0:8000` with a socket address like `/run/gunicorn.sock`.
+:::
 
 ### Gunicorn service
 
@@ -73,12 +78,16 @@ WantedBy=multi-user.target
 ```
 
 The above code needs to be modified in the following ways:
-1. user - linux username of the user who has necessary permissions to run Django server. "root" gives all privileges and works without any permission issues but is not recommended.
-    E.g. root, alpha, dev, bravo
-1. projectname - as discussed earlier
+1. user - linux username of the user who has necessary permissions to run Django server. "root" gives all privileges and works without raising any permission issues but it is not recommended because of security issues. Create a user with only necessary permissions and use that user here.
 1. path_inside_the_project_folder - absolute path inside the projectname folder
     E.g. /home/projectname/
 1. n_workers - the number of threads Django can take. The general rule is 2n+1 where n is the number of CPU cores. But may have to reduce n_workers if other services also running on the server.
+
+:::note
+
+Make sure the `--bind` flag's value matches the ListenStream path if you are using unix socket.
+
+:::
 
 ## Running Gunicorn
 
@@ -102,7 +111,7 @@ sudo systemctl status gunicorn
 Troubleshoot any issues in this. For more detailed information run:
 
 ```bash
-sudo systemctl status gunicorn
+sudo journalctl -u gunicorn
 ```
 
 ## Reloading Gunicorn

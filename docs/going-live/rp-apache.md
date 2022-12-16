@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Reverse Proxy (Apache)
 
-Only needed when DEBUG = False or maybe extra server control.
+Only needed when DEBUG = False or for extra server control.
 
 ## Installing Apache
 To install Apache, follow the guide: [How To Install the Apache Web Server on Ubuntu 20.04] (https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04)

@@ -8,4 +8,4 @@ sidebar_position: 1
 - Make sure the server has internet access.
 - Make sure the server is accessible from public ip.
 - Make sure you have access to the server and admin access through sudo.
-- SSH access or direct GUI access to the server is needed.
+- SSH access or GUI access to the server is needed.

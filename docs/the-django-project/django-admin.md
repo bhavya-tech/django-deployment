@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## The django-admin
 
-Django-admin is the Django's commandline utility. This will be used for project management like creating a new project, app, and more.
+Django-admin is the Django's command line utility. This will be used for project management like creating a new project, app, and more.
 
 ### Installing django-admin
 

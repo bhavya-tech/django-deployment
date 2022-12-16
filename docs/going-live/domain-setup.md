@@ -11,20 +11,12 @@ Go to your domain provider website and open DNS management of the corresponding 
 
 Add the following records in DNS:
 
-1.
-    ```
-    Name:       (Keep it blank)
-    Type: A
-    TTl: 3600
-    Target: <static_ip>
-    ```
-2.
-    ```
-    Name: WWW
-    Type: CNAME
-    TTl: 3600
-    Target: <domain_name>
-    ```
+| Name | Type | TTL | Target |
+| --- | --- | --- | --- |
+| (blank) | A | 3600 | <static_ip> |
+| WWW | CNAME | 3600 | <domain_name> |
+
+
 
 Save the changes.
 DNS may take upto 5 mins - 24 hrs to update.

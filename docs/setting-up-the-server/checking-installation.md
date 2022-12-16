@@ -14,12 +14,13 @@ sidebar_position: 6
 1.  Troubleshoot any issues in the installation
 1.  If your project needs any additional setup, e.g. a custom database or other services running on the server, then this is the step where you need to set those up.
 
-
+:::note
 At this point, you should be able to run the Django project.
+:::
 
 ## Deployment ready installation
 
-For your site to go live safely, you many need to do some extra checks.
+For your site to go live safely, you need to do some extra checks.
 
 Run:
 ```bash
