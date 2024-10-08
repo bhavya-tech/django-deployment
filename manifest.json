@@ -1,0 +1,16 @@
+{
+    "short_name": "Django Deployment",
+    "name": "A complete guide to deploy Django project",
+    "icons": [
+      {
+        "src": "/img/logo.svg",
+        "type": "image/svg+xml",
+        "sizes": "100x100"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#ebf2fc",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#2e8555"
+  }
